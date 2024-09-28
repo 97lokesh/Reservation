@@ -29,4 +29,6 @@ app.use(function (err, req, res, next) {
   res.locals.error = req.app.get("env") === "development" ? err : {};
   res.status(err.status || 500);
 });
- export default app
+
+app.listen(process.env.PORT,()=>console.log("App listening PORT : "+process.env.PORT))
+ 

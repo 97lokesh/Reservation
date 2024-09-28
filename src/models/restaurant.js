@@ -6,12 +6,12 @@ const getAllRestaurants = function getAllRestaurants(query) {
 }
 
 const getRestaurantById = async function getRestaurantById(param) {
-  const data = await daoRestaurant.findOne({ _id: param });
+  const data = await daoRestaurant.find({ _id: param });
   return data;
 }
 
 const getRestaurantByOwnerId = async function getRestaurantByOwnerId(param) {
-  const data = await daoRestaurant.findOne({ owner: param });
+  const data = await daoRestaurant.find({ owner: param });
   return data;
 }
 
@@ -27,7 +27,7 @@ const editRestaurant = async function editRestaurant(param, body) {
 }
 
 const deleteRestaurant = async function deleteRestaurant(param) {
-  const data = await daoRestaurant.findOne({ _id: param });
+  const data = await daoRestaurant.find({ _id: param });
   return daoRestaurant.deleteOne(data);
 }
 export default {
